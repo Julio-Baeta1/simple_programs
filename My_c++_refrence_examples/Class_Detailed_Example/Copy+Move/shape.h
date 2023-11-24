@@ -4,6 +4,23 @@
 #include <stdexcept>
 #include <iostream>
 
+/*
+    Instead of the explicitly defined functions it is possible provided the data members are primitive types (int,double, string) or
+    objects for which defaults make sense (vector<string>) we can use deafults.
+
+    Default copy constructor
+        Shape(const Shape &S) = default;
+
+    If we want to disallow moving/copying of the class we can use delete
+
+    Disallow Move constructor
+        Shape(Shape && S) = delete;
+
+    *******************Note*****************************
+    **  Deafults do not work for Pointer data members **
+    ****************************************************
+*/
+
 class Shape{
     private:
         size_t sides;
