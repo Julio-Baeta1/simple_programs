@@ -58,7 +58,7 @@ class Shape{
         //Getter
         size_t getNumSides() const { return sides;}
         //Setter
-        void setNumSides(size_t s);
+        void setNumSides(size_t s) {sides = s;}
 };
 
 #endif
