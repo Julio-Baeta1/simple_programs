@@ -27,9 +27,10 @@ Rectangle& Rectangle::operator=(Rectangle && R){
     return *this;
 }
 
-void Rectangle::prettyPrint()
+ostream& operator<<(ostream& out, const Rectangle& R)
 {
-    std::cout << "Rectangle has " << this->getNumSides() << " sides with length= " << this->l << " and breadth = " << this->b << std::endl ;
+    out<< "rectangle with " << R.sides << " sides, length= " << R.l << " and breadth = " << R.b << std::endl ;
+    return out;
 }
 
 

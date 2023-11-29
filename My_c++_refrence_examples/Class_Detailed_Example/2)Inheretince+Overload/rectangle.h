@@ -21,8 +21,6 @@ class Rectangle : public Shape
         Rectangle & operator=(Rectangle&& R);
 
         //Override the pure virtual function in base class.
-        void prettyPrint() override;
-
         double getArea() const override {return l*b;} 
 
         //Overload the operator < with our own implementation.
@@ -31,6 +29,9 @@ class Rectangle : public Shape
         friend bool operator<(const Rectangle& A, const Rectangle& B){
             return A.getArea() < B.getArea();
         }        
+
+        //Overload the << operator, friend allows Rectangle member access to ostream object.
+        friend ostream& operator<<(ostream& out, const Rectangle& R);
 };
 
 #endif

@@ -3,6 +3,9 @@
 
 #include <stdexcept>
 #include <iostream>
+#include <string>
+
+using std::ostream, std::string;
 
 //Shape is an abstarct class
 class Shape{
@@ -21,13 +24,6 @@ class Shape{
         Shape & operator= (Shape && S) = delete;    
 
         size_t getNumSides() const { return sides;}
-
-        // Virtual declaration indicates that the function will be overridden in the derived class.
-        // Since Shape is an abstract class this implementation doesn't matter but is included to illustarte for a none abstarct
-        // base class.
-        virtual void prettyPrint() { 
-            std::cout<<"This is a shape with " << sides << " sides." << std::endl;
-        }
 
         // Pure virtual function because of the = 0, it has no implementation in the base class and exists to be overridden in the
         // derived class.
